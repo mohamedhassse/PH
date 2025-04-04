@@ -5,23 +5,27 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Progetto Happiness',
-      // Aggiungi queste sezioni:
-      components: {
-        // Nascondi elementi non necessari
-        PageTitle: false,
-      },
       css: {
-        // Colori personalizzati (es. blu aziendale)
         theme: {
           light: {
-            '--sl-color-accent-low': '#e0f2fe',
-            '--sl-color-accent': '#0369a1',
+            // Colori principali (bianco/azzurro-blu)
+            '--sl-color-white': '#ffffff',
+            '--sl-color-gray-1': '#f8fafc',
+            '--sl-color-gray-5': '#e2e8f0',
+            '--sl-color-accent': '#1e88e5',  // Azzurro-blu
+            '--sl-color-accent-low': '#bbdefb', // Azzurro chiaro
+            '--sl-color-text': '#1e293b',
           },
+          dark: {
+            // Versione dark (opzionale)
+            '--sl-color-accent': '#42a5f5',
+            '--sl-color-accent-low': '#0d47a1',
+          }
         }
       },
-      // Riduci la sidebar
-      sidebar: {
-        collapsed: true,
+      components: {
+        // Semplifica l'header
+        Header: './src/components/CustomHeader.astro',
       },
     }),
   ],
